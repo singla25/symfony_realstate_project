@@ -1,0 +1,318 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block body %}
+    {{ include('pages/header.html.twig') }}
+
+    <div class="container my-2">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card welcome_card text-center bg-dark bg-opacity-50" style="height: 225px;">
+                    <div class="card-img-overlay">
+                        <div class="card-body">
+                            <h2> Welcome home Buddy! </h2>
+                            <p>This is your email address: </p>
+                            <button class="btn btn-success">please verify</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="more_about mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="excellence justify-content-center">
+                            <h4 class="text-center py-3">Inspiring excellence. Empowering through commitment.</h4>
+                            <p class="justify-content-center">
+                                TruHeaven is a rising force in the real estate market of the Tricity and surrounding regions, built on a foundation of trust, transparency, and a deep understanding of buyer aspirations. With a focus on quality, timely delivery, and customer satisfaction, TruHeaven is shaping the future of modern living and commercial development.
+
+                                In a short span, we’ve become a preferred choice for homebuyers, investors, and commercial clients looking for properties that combine strategic location, thoughtful design, and long-term value.
+
+                                Whether you dream of a cozy apartment, a premium villa, or a dynamic commercial space, TruHeaven helps turn vision into reality — with curated locations, innovative layouts, and lifestyle-enhancing features.
+                            </p>
+                            <a class="d-inline-block text-decoration-none" href="{{ path('about_page') }}"> Know More <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="whyToChoose text-md-center">
+                            <h4 class="py-3">What Sets TruHeaven Apart?</h4>
+                            <ul class="list-unstyled">
+                                <li>✔️ Transparent Pricing & Verified Listings</li>
+                                <li>✔️ Design-Driven Projects for Modern Living</li>
+                                <li>✔️ Locations Chosen for Growth & Connectivity</li>
+                                <li>✔️ Customer-Centric Approach from Start to Finish</li>
+                                <li>✔️ Commitment to Quality, Innovation & Timely Delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="below_excellence py-5 text-center">
+                <div class="row g-4 justify-content-center">
+                    {% set one_box_items = [
+                        {'img': 'one_box_item01.webp', 'title': '17', 'desc': 'Years of Trust &amp; Commitment'},
+                        {'img': 'one_box_item02.webp', 'title': '28', 'desc': 'Delivered Projects'},
+                        {'img': 'one_box_item03.webp', 'title': '12k', 'desc': 'Homes Delivered'},
+                        {'img': 'one_box_item04.webp', 'title': '08', 'desc': 'Ongoing Projects'},
+                    ] %}
+
+                    {% for item in one_box_items %}
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0 py-4">
+                                <img src="{{ asset('photos/' ~ item.img) }}" class="card-img-top mx-auto mb-2" style="width: 50px;" alt="{{ item.desc }}">
+                                <div class="card-body p-0">
+                                    <h4 class="fw-bold">{{ item.title }}</h4>
+                                    <p class="text-muted mb-0">{{ item.desc }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 mt-2"><br><br>
+                        <p class="text-center fw-bold"><strong> A belief of Delivering in 1 Lakh Dream Home Keys in the Next 14 Years </strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news_blog_tab p-0 py-5">
+        <div class="container">
+            <div class="">
+                <h3 class="title mb-3 text-center"> News &amp; Blog </h3>
+                <div>
+                    <nav>
+                        <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                                <img src="{{ asset('photos/news_icon_blue.webp') }}" alt="news_icon">
+                                Blogs
+                            </button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                <img src="{{ asset('photos/blog_icon_blue.webp') }}" alt="blog_icon">
+                                News
+                            </button>
+                        </div>
+                    </nav>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                            <div class="blog_list mt-3 d-flex">
+                                <div class="row g-4 justify-content-center">
+                                    {% set blog_lists = [
+                                        {'heading': 'Pros and Cons of Buying a Second Home in Tricity', 'date': 'Nov 01, 2023', 'desc': 'In the northern region of the country, Tricity is the best place to live in. Chandigarh, Panchkula and Mohali are connected w... '},
+                                        {'heading': 'Which is the Best Society to Live in Mohali?', 'date': 'Nov 01, 2023', 'desc': 'Whenever someone talks about Urban Development, the city Mohali is always mentioned. Not only Mohali has set benchmarks for o... '},
+                                        {'heading': 'Which is the Best Society to Live in Zirakpur?', 'date': 'Nov 01, 2023', 'desc': 'In northern region, Zirakpur is transforming into one of the most advanced economies in the nation at this moment. The consis... '},
+                                        {'heading': 'How Investing In Mohali Properties Can Be An Asset For You', 'date': 'Nov 01, 2022', 'desc': 'Hey! Are you looking for house rentals or are you after purchasing your dream house? If yes, then definitely you might be sea... '},
+                                    ] %}
+
+                                    {% for blog in blog_lists %}
+                                        <div class="col">
+                                            <div class="card h-100 shadow-sm border-0 p-3">
+                                                <div class="card-body p-0">
+                                                    <h6 class=""> {{ blog.date }} <a href="#" target="_blank"><img src="{{ asset('photos/arrow_icon.webp') }}" alt="arrow-icon"></a></h6>
+                                                    <h3><a href="#" target="_blank" class="text-decoration-none"> {{ blog.heading }} </a></h3>
+                                                    <p></p>
+                                                    <p class="text-muted mb-0">{{ blog.desc }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                            <div class="news_list p-0 mt-4">
+                                {% set news_lists = [
+                                    {'name': 'TruHaven Group:', 'heading': 'The Impact of Location on Property Value: Unraveling Key Factors', 'desc': 'In the ever-evolving world of real estate, one aspect remains timeless and paramount: the profound influence of location on property value. Whether you are an aspiring homeowner or a seasoned investor, understanding the significance of location is fundamental to making informed decisions. This article delves...', 'date' : 'Nov 07, 2023'},
+                                    {'name': 'TruHaven Group:', 'heading': 'Festival Impact on Real Estate Market', 'desc' : 'Festivals are a time of celebration, joy, and togetherness. But did you know that they can also have a significant impact on the real estate market? As the calendar turns towards festive seasons like Diwali, Christmas, Thanksgiving, and more, the real estate sector experiences a...', 'date' : 'Nov 07, 2023'},
+                                ] %}
+
+                                {% for news in news_lists %}
+                                    <ul class="news w-100 list-unstyled">
+                                        <li class="m-0">
+                                            <h5 class="news_details ">
+                                                <a href="#" target="_blank" class="text-decoration-none">
+                                                    <strong>{{ news.name }}</strong>
+                                                    {{ news.heading }}
+                                                </a>
+                                            </h5>
+                                            <div class="news_desc">{{ news.desc }}</div>
+                                            <p class="news_date"> {{ news.date }}</p>
+                                        </li>
+                                    </ul>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature_projects py-5">
+        <div class="container">
+            <h3 class="title my-3 text-center"> Featured Projects </h3>
+
+            <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-resi-tab" data-bs-toggle="pill" data-bs-target="#pills-resi" type="button" role="tab" aria-controls="pills-resi" aria-selected="true">Residential Projects</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-comm-tab" data-bs-toggle="pill" data-bs-target="#pills-comm" type="button" role="tab" aria-controls="pills-comm" aria-selected="false">Commercial Projects</button>
+                </li>
+            </ul>
+
+            <!-- Tabs -->
+            <div class="tab-content" id="pills-tabContent">
+
+                <!-- Residential Projects -->
+                <div class="tab-pane fade show active" id="pills-resi" role="tabpanel" aria-labelledby="pills-resi-tab">
+                    {% set residential_projects = [
+                        { name: 'TruHaven Towers', location: 'Shimla', img: '1.jpg'},
+                        { name: 'Montefiore Manali', location: 'Manali', img: '2.jpg'},
+                        { name: 'TruHaven Parivaas', location: 'Zirakpur Patiala Highway, Banur', img: '3.webp'},
+                        { name: 'House of Dreams Mohali', location: 'Landran Kharar Highway, Sector 127, Mohali', img: '4.webp'},
+                        { name: 'Dream of Havens Panchkula', location: 'High Ground Road, Panchkula', img: '5.webp'},
+                        { name: 'TruHaven F Towers', location: 'Kasauli', img: '6.webp'},
+                        { name: 'TruHaven Elite Homes', location: 'New Chandigarh', img: '7.webp'},
+                    ] %}
+                    <div class="owl-carousel owl-theme" id="resi_proj">
+                        {% for project in residential_projects %}
+                            <div class="item">
+                                <div class="card border-0">
+                                    <img src="{{ asset('photos/residentialProperty/' ~ project.img) }}" class="card-img-top" alt="{{ project.name }}" style="height: 200px">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title"><a href="#">{{ project.name }}</a></h5>
+                                        <p class="text-muted">{{ project.location }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Commercial Projects -->
+                <div class="tab-pane fade" id="pills-comm" role="tabpanel" aria-labelledby="pills-comm-tab">
+                    {% set commercial_projects = [
+                        { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
+                        { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
+                        { name: 'TruHaven City Gate', location: 'Shimla', img: '22.webp'},
+                    ] %}
+                    <div class="owl-carousel owl-theme" id="comm_proj">
+                        {% for project in commercial_projects %}
+                            <div class="item">
+                                <div class="card border-0">
+                                    <img src="{{ asset('photos/residentialProperty/' ~ project.img) }}" class="card-img-top" alt="{{ project.name }}" style="height: 200px">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">{{ project.name }}</h5>
+                                        <p class="text-muted">{{ project.location }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home_contact_form bg-secondary bg-opacity-50 py-5">
+        <div class="container">
+            <div class="home-form">
+                <h3 class="title mb-4 text-center fw-bold"> Have a Question? We are Glad to <br> Consult You! </h3>
+                {{ form_start(form) }}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="icon_bt col-form-label fw-bold"><i class="fa fa-user fs-5" aria-hidden="true"></i> Enter your Name
+                                    </label>
+                                    <div class="">
+                                        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="icon_bt col-form-label fw-bold"><i class="fa fa-envelope fs-5" aria-hidden="true"></i> Enter your Email Address
+                                    </label>
+                                    <div class="">
+                                        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="icon_bt col-form-label fw-bold"><i class="fa fa-phone fs-5" aria-hidden="true"></i> Enter your Contact Number
+                                    </label>
+                                    <div class="">
+                                        {{ form_widget(form.phoneNumber, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="icon_bt col-form-label fw-bold"><i class="fa fa-hospital fs-5" aria-hidden="true"></i> Select Your Project
+                                    </label>
+                                    <div class="">
+                                        {{ form_widget(form.project, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 text-center pt-2">
+                                <button type="submit" class="btn btn-success px-5">Book a Free Consultation</button>
+                            </div>
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </section>
+
+    <section class="more_about_TruHaven">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="my-md-5">
+                    <h3 class="text-center">Best Real Estate in Chandigarh</h3>
+                    <div class="more_content">
+                        <p>For 17 years, <strong>TruHaven</strong> has been the name to reckon with in the real estate industry of Tricity (comprising Mohali, Zirakpur, and Derabassi). Our journey began with a simple yet profound mission: to offer unique architectural solutions. Today, we take pride in being recognized as one of the most reputable and customer-centric best builders in Chandīgarh. Our foundation is built on a commitment to quality and client satisfaction.</p>
+
+                        <p>For nearly two decades, <strong>TruHaven</strong> has been crafting vibrant neighbourhoods and exquisite interiors across North India. From the heritage charm of Chandigarh and the rising skylines of Mohali to the scenic valleys of Shimla and Manali, every TruHaven address is designed to elevate the way people live, work, and invest.</p>
+
+                        <p>Our portfolio now spans <strong>30+ landmark projects</strong> and more than <strong>10,000 delivered homes</strong>, each finished on schedule and backed by rigorous quality control. This consistent performance has positioned TruHaven as one of the region’s most trusted real-estate brands.</p>
+
+                        <p>We combine contemporary architecture with sustainable engineering—solar-ready rooftops, rain-water harvesting, low-VOC materials, and smart-home automation—ensuring that every square foot is future-proof and eco-friendly. It’s a philosophy we call <em>“Live Forward.”</em></p>
+
+                        <p>The Tricity remains our home turf, but our footprint is expanding fast. Emerging corridors such as Zirakpur and Derabassi, with direct links to the Chandigarh–Delhi Expressway and the new international airport, are now magnets for professionals from Delhi-NCR and beyond. TruHaven is helping shape these growth zones with thoughtfully planned residential townships, high-street retail, and flexible workspaces.</p>
+
+                        <p>Whether you seek a cosy starter apartment, a designer villa in the hills, or a mixed-use investment with assured returns, TruHaven delivers options that balance lifestyle with long-term value. Each customer journey is supported by transparent paperwork, in-house loan assistance, and a dedicated post-handover service team.</p>
+
+                        <p>Our strength lies in people—architects who innovate, engineers who perfect, and a customer-care crew that listens first. Their collective passion drives our <strong>99% on-time handover record</strong> and a referral base that now accounts for one in every three new bookings.</p>
+
+                        <p>As we celebrate our 18th year, we thank every homeowner, investor, and partner for trusting TruHaven. Together, we will continue to set new benchmarks in design, sustainability, and customer delight—turning addresses into legacies for generations to come.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ include('pages/footer.html.twig') }}
+{% endblock %}
+

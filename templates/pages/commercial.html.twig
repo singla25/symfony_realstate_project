@@ -1,0 +1,374 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Commercial Properties
+{% endblock %}
+
+{% block body %}
+    {{ include('pages/header.html.twig') }}
+
+    <div class="commercialPage pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="commercialProperty pt-4">
+                        <h3 class="text-center mb-4">Commercial Property</h3>
+                        <div class="content">
+                            For over a decade, TruHaven has been redefining the commercial real estate experience across North India—delivering smart, strategic spaces where businesses grow, thrive, and lead. With a portfolio that spans premium office spaces, retail hubs, and mixed-use commercial developments, TruHaven is the trusted partner for entrepreneurs, corporates, and investors seeking long-term value.
+                            <p>Our commercial properties are strategically located in high-growth corridors across North India. Whether you're launching a new venture or expanding your operations, TruHaven offers the right environment—blending prime location advantages with modern infrastructure and robust connectivity.</p>
+                            <p>Understanding the rising demand for affordable-yet-aspirational business spaces, we focus on delivering projects that are cost-efficient, future-ready, and tailored to diverse business needs—from startups and co-working spaces to flagship stores and corporate offices.</p>
+                            <p>Each TruHaven project is built with precision engineering, compliance-ready layouts, energy-efficient utilities, and dynamic common areas—ensuring your workspace is more than just square footage—it’s a platform for growth.</p>
+                            <p>Whether you seek ready-to-operate commercial spaces or investment-worthy under-construction properties, TruHaven is your gateway to North India’s booming commercial future. Join a growing network of visionary businesses that call TruHaven home.</p>
+                        </div>
+                        <div class="commercial_img pt-4">
+                            <img src="{{ asset('photos/commercial.webp') }}" alt="commercial_img" class="rounded-4">
+                        </div>
+                    </div>
+
+                    <div class="commercialPropertyInTricity py-5">
+                        <h3 class="text-center mt-5">Commercial Projects in North India</h3>
+
+                        <div class="comm_tabs">
+                            <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-tab-pane" type="button" role="tab" aria-controls="all-tab-pane" aria-selected="true">All</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="readyToMove-tab" data-bs-toggle="tab" data-bs-target="#readyToMove-tab-pane" type="button" role="tab" aria-controls="readyToMove-tab-pane" aria-selected="false">Ready to Move</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="underConstruction-tab" data-bs-toggle="tab" data-bs-target="#underConstruction-tab-pane" type="button" role="tab" aria-controls="underConstruction-tab-pane" aria-selected="false">Under Construction</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+                                    <div class="owl-carousel" id="regi_proj_list">
+                                        <div class="owl-stage-outer">
+                                            <div class="owl-stage">
+                                                {% set allProjects = [
+                                                    { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
+                                                    { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
+                                                    { name: 'TruHaven City Gate', location: 'Shimla', img: '22.webp'},
+                                                ] %}
+
+                                                <div class="owl-item" style="width: 531px; margin-right: 15px;">
+                                                    <div class="item">
+                                                        <div class="showcaseImg">
+                                                            {% for allProject in allProjects %}
+                                                                <img src="{{ asset('photos/residentialProperty/' ~allProject.img) }}" alt="{{ allProject.name }}" style="height: 200px; width: 600px">
+                                                                <div class="showcase_content_slide">
+                                                                    <h4><a href="#">{{ allProject.name }}</a></h4>
+                                                                    <div class="showLocation">
+                                                                        <p>{{ allProject.location }}</p>
+                                                                    </div>
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="readyToMove-tab-pane" role="tabpanel" aria-labelledby="readyToMove-tab" tabindex="0">
+                                    <div class="owl-carousel" id="regi_proj_list2">
+                                        <div class="owl-stage-outer">
+                                            <div class="owl-stage">
+                                                {% set readyToMoveProjects = [
+                                                    { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
+                                                    { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
+                                                ] %}
+
+                                                <div class="owl-item" style="width: 531px; margin-right: 15px;">
+                                                    <div class="item">
+                                                        <div class="showcaseImg01">
+                                                            {% for readyToMoveProject in readyToMoveProjects %}
+                                                                <img src="{{ asset('photos/residentialProperty/' ~readyToMoveProject.img) }}" alt="{{ readyToMoveProject.name }}" style="height: 200px; width: 600px">
+                                                                <div class="showcase_content_slide">
+                                                                    <h4><a href="#">{{ readyToMoveProject.name }}</a></h4>
+                                                                    <div class="showLocation">
+                                                                        <p>{{ readyToMoveProject.location }}</p>
+                                                                    </div>
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="underConstruction-tab-pane" role="tabpanel" aria-labelledby="underConstruction-tab" tabindex="0">
+                                    <div class="tab-pane fade show" id="Construction" role="tabpanel" aria-labelledby="Construction-tab">
+                                        <div class="owl-carousel" id="regi_proj_list1">
+                                            <div class="owl-stage-outer">
+                                                <div class="owl-stage">
+                                                    {% set underConstructionProjects = [
+                                                        { name: 'TruHaven City Gate', location: 'Shimla', img: '22.webp'},
+                                                    ] %}
+
+                                                    <div class="owl-item" style="width: 531px; margin-right: 15px;">
+                                                        <div class="item">
+                                                            <div class="showcaseImg01">
+                                                                {% for underConstructionProject in underConstructionProjects %}
+                                                                    <img src="{{ asset('photos/residentialProperty/' ~underConstructionProject.img) }}" alt="{{ underConstructionProject.name }}" style="height: 200px; width: 600px">
+                                                                    <div class="showcase_content_slide">
+                                                                        <h4><a href="#">{{ underConstructionProject.name }}</a></h4>
+                                                                        <div class="showLocation">
+                                                                            <p>{{ underConstructionProject.location }}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comm_tabs my-4">
+                            <h3 class="text-center my-5">Delivered Projects</h3>
+
+                            <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="2024-tab" data-bs-toggle="tab" data-bs-target="#2024-tab-pane" type="button" role="tab" aria-controls="2024-tab-pane" aria-selected="true">2024</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="2022-tab" data-bs-toggle="tab" data-bs-target="#2022-tab-pane" type="button" role="tab" aria-controls="2022-tab-pane" aria-selected="false">2022</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#2020-tab-pane" type="button" role="tab" aria-controls="2020-tab-pane" aria-selected="false">2020</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="2018-tab" data-bs-toggle="tab" data-bs-target="#2018-tab-pane" type="button" role="tab" aria-controls="2018-tab-pane" aria-selected="false">2018</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="2016-tab" data-bs-toggle="tab" data-bs-target="#2016-tab-pane" type="button" role="tab" aria-controls="2016-tab-pane" aria-selected="false">2016</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="2014-tab" data-bs-toggle="tab" data-bs-target="#2014-tab-pane" type="button" role="tab" aria-controls="2014-tab-pane" aria-selected="false">2014</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="2011-tab" data-bs-toggle="tab" data-bs-target="#2011-tab-pane" type="button" role="tab" aria-controls="2011-tab-pane" aria-selected="false">2011</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="2024-tab-pane" role="tabpanel" aria-labelledby="2024-tab" tabindex="0">
+                                    {% set projects = [
+                                        { name: 'TruHaven Towers', location: 'Shimla', img: '1.jpg'},
+                                        { name: 'TruHaven Elite Homes', location: 'New Chandigarh', img: '7.webp'},
+                                        { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
+                                    ] %}
+                                    <div class="owl-carousel delivered_project">
+                                        {% for project in projects %}
+                                            <div class="item">
+                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
+                                                <div class="showcase_content_slide">
+                                                    <h4><a href="#">{{ project.name }}</a></h4>
+                                                    <div class="showLocation">
+                                                        <p>{{ project.location }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="2022-tab-pane" role="tabpanel" aria-labelledby="2022-tab" tabindex="0">
+                                    {% set projects = [
+                                        { name: 'Gateway of Dreams', location: 'Patiala Highway, Zirakpur', img: '8.webp'},
+                                        { name: 'Olivia Floors', location: 'Sector 116, Mohali', img: '9.webp'},
+                                    ] %}
+
+                                    <div class="owl-carousel delivered_project">
+                                        {% for project in projects %}
+                                            <div class="item">
+                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
+                                                <div class="showcase_content_slide">
+                                                    <h4><a href="#">{{ project.name }}</a></h4>
+                                                    <div class="showLocation">
+                                                        <p>{{ project.location }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane fade" id="2020-tab-pane" role="tabpanel" aria-labelledby="2020-tab" tabindex="0">
+                                    {% set projects = [
+                                        { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
+                                        { name: 'Housing Park Phase 2', location: 'Derabassi', img: '12.webp'},
+                                        { name: 'Lifestyle Sky Homes', location: 'Sector 116, Mohali', img: '13.webp'},
+                                    ] %}
+                                    <div class="owl-carousel delivered_project">
+                                        {% for project in projects %}
+                                            <div class="item">
+                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
+                                                <div class="showcase_content_slide">
+                                                    <h4><a href="#">{{ project.name }}</a></h4>
+                                                    <div class="showLocation">
+                                                        <p>{{ project.location }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="2018-tab-pane" role="tabpanel" aria-labelledby="2018-tab" tabindex="0">
+                                    {% set projects = [
+                                        { name: 'Lifestyle Residency', location: 'Sector 116, Mohali', img: '14.webp'},
+                                        { name: 'Platina Floors', location: 'Sector 127, Mohali', img: '15.webp'},
+                                    ] %}
+                                    <div class="owl-carousel delivered_project">
+                                        {% for project in projects %}
+                                            <div class="item">
+                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
+                                                <div class="showcase_content_slide">
+                                                    <h4><a href="#">{{ project.name }}</a></h4>
+                                                    <div class="showLocation">
+                                                        <p>{{ project.location }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="2016-tab-pane" role="tabpanel" aria-labelledby="2016-tab" tabindex="0">
+                                    {% set projects = [
+                                        { name: 'Housing Park Phase 1', location: 'Derabassi', img: '16.webp'},
+                                        { name: 'Exotic Floors', location: 'Sector 127, Mohali', img: '17.webp'},
+                                        { name: 'Elitna Floors', location: 'Sector 127, Mohali', img: '18.webp'},
+                                    ] %}
+                                    <div class="owl-carousel delivered_project">
+                                        {% for project in projects %}
+                                            <div class="item">
+                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
+                                                <div class="showcase_content_slide">
+                                                    <h4><a href="#">{{ project.name }}</a></h4>
+                                                    <div class="showLocation">
+                                                        <p>{{ project.location }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="2014-tab-pane" role="tabpanel" aria-labelledby="2014-tab" tabindex="0">
+                                    {% set projects = [
+                                        { name: 'Home Extension 3', location: 'Sector 127, Mohali', img: '19.webp'},
+                                    ] %}
+
+                                    <div class="owl-carousel delivered_project">
+                                        {% for project in projects %}
+                                            <div class="item">
+                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
+                                                <div class="showcase_content_slide">
+                                                    <h4><a href="#">{{ project.name }}</a></h4>
+                                                    <div class="showLocation">
+                                                        <p>{{ project.location }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="2011-tab-pane" role="tabpanel" aria-labelledby="2011-tab" tabindex="0">
+                                    {% set projects = [
+                                        { name: 'North Vally', location: 'Kharar, Mohali', img: '20.webp'},
+                                        { name: 'TruHaven Parivaar', location: 'Mohali', img: '21.png'},
+                                    ] %}
+                                    <div class="owl-carousel delivered_project">
+                                        {% for project in projects %}
+                                            <div class="item">
+                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
+                                                <div class="showcase_content_slide">
+                                                    <h4><a href="#">{{ project.name }}</a></h4>
+                                                    <div class="showLocation">
+                                                        <p>{{ project.location }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="FAQ mt-0 mb-0">
+                        <h3 class="text-center my-5">Frequently Asked Questions</h3>
+                        <div class="accordion" id="accordionExample">
+                            {% set faqs = [
+                                {'question': 'What is a Commercial Property?', 'answer': 'Commercial properties are any buildings or lands meant for income generation and not as a domestic establishment. These include office buildings, retail stores, malls, hotels, etc.'},
+                                {'question': 'What are the top 3 factors that need to be considered when purchasing a commercial property?', 'answer': 'Connectivity and neighbourhood are the topmost points to consider if you want to buy a commercial property because they drive the footfall for your business. Next is the demography – you must know how well your audience fits in with your idea of business. And lastly, interest rates.'},
+                                {'question': 'What are the commercial projects offered in Tricity by CP67 Group?', 'answer': 'City Square &amp; City Gate is the commercial property that CP67 Group offers in Tricity.'},
+                            ] %}
+                            {% for faq in faqs %}
+                                <div class="card m-2">
+                                    <div class="card-header" id="heading{{ loop.index }}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse{{ loop.index }}" aria-expanded="false"
+                                                    aria-controls="collapse{{ loop.index }}">
+                                                {{ faq.question }}<i class="fa fa-plus ms-2"></i>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse{{ loop.index }}" class="accordion-collapse collapse"
+                                         aria-labelledby="heading{{ loop.index }}" data-bs-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p>{{ faq.answer }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comm_property">
+        <div class="container">
+            <div class="col-md-12">
+                <h3 class="my-5 text-center">Commercial Properties by TruHaven</h3>
+                <div class="content">
+                    <p>For more than 15 years, TruHaven has been dedicated to shaping the future of commercial real estate in North India. With an unwavering commitment to quality and vision, we’ve delivered iconic commercial landmarks that have empowered hundreds of businesses, retailers, and entrepreneurs to thrive. From boutique showrooms to corporate hubs, our developments stand as symbols of trust, growth, and excellence.</p>
+                    <p>We proudly offer a wide portfolio of commercial spaces across Tricity—including Mohali, Zirakpur, and Chandigarh—designed to meet the diverse needs of today’s dynamic business environment. Whether you're launching a startup, expanding operations, or investing in future-ready spaces, TruHaven delivers an ideal blend of visibility, infrastructure, and accessibility.</p>
+                    <p>Chandigarh has always represented aspiration and prosperity, but its surrounding cities like Mohali and Zirakpur have now become hotbeds of commercial growth. TruHaven taps into these high-potential corridors, offering you business spaces that come with excellent road connectivity, competitive pricing, and proximity to key residential and industrial zones.</p>
+                    <p>At TruHaven, we are more than just developers—we are enablers of entrepreneurial success. Our vision is to create commercial ecosystems where businesses flourish, collaborations ignite, and investments yield long-term returns. Every square foot is crafted with purpose—blending smart layouts, compliance-ready infrastructure, and modern amenities that enhance productivity and brand image alike.</p>
+                    <p>With a growing portfolio of successful projects and a strong reputation across Punjab and North India, TruHaven stands at the forefront of affordable-yet-premium commercial development. We believe that quality business spaces should be within reach—not a luxury for the few, but an opportunity for many.</p>
+                    <p>Our properties aren’t just about location—they’re about ambition, growth, and sustainability. Whether it’s a retail space in a bustling high street or an office setup in a well-connected business district, we ensure every TruHaven space reflects our promise of value, visibility, and viability.</p>
+                    <p>We understand that owning or investing in commercial property is a major decision. That’s why we bring transparency, timely delivery, and unwavering support at every stage of your journey. Our clients aren’t just buyers—they’re partners in our shared growth story.</p>
+                    <p>Mohali, Zirakpur, and the greater Chandigarh region are evolving into powerful business hubs. With growing infrastructure, increasing footfall, and progressive urban planning, there has never been a better time to secure your commercial footprint in North India.</p>
+                    <p>At TruHaven, we’re here to help you turn your business dreams into milestones. Our commercial spaces aren’t just addresses—they're destinations of success. Join the growing network of visionary business owners who call TruHaven their launchpad.</p>
+                    <p>In conclusion, TruHaven’s journey is rooted in passion, trust, and performance. With a legacy of delivering functional, elegant, and budget-conscious commercial properties, we invite you to explore our projects and be part of North India’s next wave of commercial transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ include('pages/footer.html.twig') }}
+{% endblock %}
+

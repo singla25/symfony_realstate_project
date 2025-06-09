@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section class="legacy py-5 bg-secondary bg-opacity-50 text-center">
+        <div class="container">
+            <h4 class="fw-bold mb-2">Our Legacy of Better Living</h4>
+            <p class="text-muted mb-4">Explore our journey through numbers and trust.</p>
+
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-4 justify-content-center">
+                {% set living_data = [
+                    {'img': 'living_1.webp', 'title': '16', 'desc': 'Years of Better Living'},
+                    {'img': 'living_2.webp', 'title': '12000+', 'desc': 'Homes Delivered'},
+                    {'img': 'living_3.webp', 'title': '28+', 'desc': 'Delivered Projects'},
+                    {'img': 'living_4.webp', 'title': '8', 'desc': 'Upcoming Projects'},
+                    {'img': 'living_5.webp', 'title': '8', 'desc': 'Ongoing Projects'}
+                ] %}
+
+                {% for item in living_data %}
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 py-4">
+                            <img src="{{ asset('photos/' ~ item.img) }}" class="card-img-top mx-auto mb-2" style="width: 50px;" alt="{{ item.desc }}">
+                            <div class="card-body p-0">
+                                <h4 class="fw-bold">{{ item.title }}</h4>
+                                <p class="text-muted mb-0">{{ item.desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Top Section -->
+    <section class="footer_section py-5 bg-dark bg-opacity-50 text-white text-center">
+        <div class="container">
+            <h3 class="fw-semibold mb-4">Looking for something specific?<br>We'd be delighted to help you.</h3>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item mx-3">
+                    <a href="#" class="text-white text-decoration-none fw-medium">Contact Us</a>
+                </li>
+                <li class="list-inline-item mx-3">
+                    <a href="#" class="text-white text-decoration-none fw-medium">Complaints & Feedback</a>
+                </li>
+                <li class="list-inline-item mx-3">
+                    <a href="#" class="text-white text-decoration-none fw-medium">Partner with Us</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Main -->
+    <footer class="bg-dark pt-5 text-white">
+        <div class="container">
+
+            <!-- Top Row Content -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center border-bottom pb-4 mb-4">
+                <a href="#"><img src="{{ asset('photos/logo.png') }}" height="65" width="150" alt="TruHaven Logo"></a>
+                <a href="#" class="fw-semibold text-decoration-none mt-3 mt-md-0 text-white">Join a Business Associate</a>
+            </div>
+
+            <!-- Middle Row Content -->
+            <div class="row gy-4">
+
+                <!-- Footer Links -->
+                {% set footer_links = {
+                    'Who We Are': ['About', 'Our Journey', 'Group Directors', 'Accolades'],
+                    'What We Do': ['Residential', 'Commercial', 'Delivered Projects', 'Upcoming Projects'],
+                    'Media Centre': ['Press Coverage', 'Customer Speak', 'Press Kit'],
+                    'Quick Links': ['RERA-ID', 'Disclaimer', 'Privacy Policy', 'Sitemap', 'NRI Corner', 'Career']
+                } %}
+
+                {% for title, links in footer_links %}
+                    <div class="col-6 col-md-2">
+                        <h6 class="fw-bold">{{ title }}</h6>
+                        <ul class="list-unstyled">
+                            {% for link in links %}
+                                <li><a href="#" class="text-white-50 text-decoration-none">{{ link }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+
+                <!-- Newsletter and Social -->
+                <div class="col-12 col-md-4">
+                    <h6 class="fw-bold">Subscribe the Newsletter</h6>
+                    <form class="d-flex mb-3" method="post">
+                        <input type="email" name="email" class="form-control me-2" placeholder="Enter your email address" style="width: 70%;" required>
+                        <button type="submit" name="sub_submit" class="btn btn-dark"><i class="fa fa-arrow-right"></i></button>
+                    </form>
+
+                    <h6 class="fw-bold">Connect With Us</h6>
+                    <div class="d-flex gap-3">
+                        {% set social_links = [
+                            {'icon': 'fa-brands fa-facebook-f', 'url': '#'},
+                            {'icon': 'fa-brands fa-twitter', 'url': '#'},
+                            {'icon': 'fa-brands fa-linkedin-in', 'url': '#'},
+                            {'icon': 'fa-brands fa-youtube', 'url': '#'},
+                            {'icon': 'fa-brands fa-instagram', 'url': '#'},
+                            {'icon': 'fa-solid fa-podcast', 'url': '#'}
+                        ] %}
+
+                        {% for item in social_links %}
+                            <a href="{{ item.url }}" class="text-white-50 fs-5" target="_blank" aria-label="{{ item.icon }}">
+                                <i class="{{ item.icon }}"></i>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-top mt-5 pt-3 small text-muted">
+                <div class="row">
+                    <div class="col-md-6 text-white">&copy; 2008–2030 TruHaven Group. All rights reserved.</div>
+                    <div class="col-md-6 text-md-end mt-2 mt-md-0 text-white">Design & Developed by: Sahil Singla</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}
+
+

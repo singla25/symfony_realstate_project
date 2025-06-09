@@ -1,0 +1,180 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+About Us
+{% endblock %}
+
+{% block body %}
+    {{ include('pages/header.html.twig') }}
+
+    <div class="about_page">
+        <div class="banner position-relative">
+            <img src="{{ asset('photos/about-banner.webp') }}" class="img-fluid w-100" alt="about-banner">
+
+            <div class="position-absolute top-50 start-50 translate-middle text-center w-75 p-2 bg-white bg-opacity-75 rounded shadow-lg">
+                <h4 class="about_truHaven fw-bold pt-3">TruHaven</h4>
+                <h2 class="mt-3">Your Gateway to Smart & Sustainable Living</h2>
+                <p>TruHaven is more than just a real estate brand — it's a promise of reliability, comfort, and excellence. Born from a vision to redefine urban living in North India, TruHaven stands for trust, quality construction, and long-term value.</p>
+
+                <p>With a growing footprint across Tricity, Shimla, and Manali, TruHaven is committed to delivering modern homes and commercial spaces that blend style with practicality. Every square foot is designed with purpose, reflecting a deep understanding of what today’s homebuyers truly need — space, security, connectivity, and community.</p>
+
+                <p>From thoughtfully planned residential apartments to future-ready commercial hubs, our projects are designed to help you thrive. At TruHaven, we don't just construct buildings — we build lifestyles rooted in sustainability, innovation, and timeless value.</p>
+            </div>
+        </div>
+
+        <div class="milestones pt-4">
+            <h3 class="fa-bold text-center my-4">Milestones</h3>
+            <div class="my-5">
+                {% set milestones = [
+                    {'year': '2011', 'title': 'Noor Villa', 'location': 'Kharar, Mohali', 'img': '01.webp'},
+                    {'year': '2011', 'title': 'Noor City', 'location': 'Kharar, Mohali', 'img': '02.webp'},
+                    {'year': '2011', 'title': 'TruHaven Home Extension', 'location': 'Mohali', 'img': '03.webp'},
+                    {'year': '2014', 'title': 'TruHaven Home Extension 2', 'location': 'Sector 127, Mohali', 'img': '04.webp'},
+                    {'year': '2014', 'title': 'South City', 'location': 'Zirakpur', 'img': '05.webp'},
+                    {'year': '2014', 'title': 'North Vally', 'location': 'Kharar, Mohali', 'img': '06.webp'},
+                    {'year': '2014', 'title': 'TruHaven Home Extension 3', 'location': 'Sector 127, Mohali', 'img': '07.webp'},
+                    {'year': '2016', 'title': 'Elina Floors', 'location': 'Sector 116, Mohali', 'img': '08.webp'},
+                    {'year': '2016', 'title': 'Lifestyle Square', 'location': 'Sector 116, Mohali', 'img': '09.webp'},
+                    {'year': '2016', 'title': 'Exotic Floors', 'location': 'Kharar, Mohali', 'img': '10.webp'},
+                    {'year': '2016', 'title': 'Housing Park Phase 1', 'location': 'Shimla', 'img': '11.webp'},
+                    {'year': '2020', 'title': 'Platina Floors', 'location': 'Mansoori', 'img': '12.webp'},
+                    {'year': '2020', 'title': 'Lifestyle Residency', 'location': 'Mohali', 'img': '13.webp'},
+                    {'year': '2020', 'title': 'City of Dreams', 'location': 'Mohali', 'img': '14.webp'},
+                    {'year': '2020', 'title': 'Lifestyle Sky Homes', 'location': 'Mohali', 'img': '15.webp'},
+                    {'year': '2022', 'title': 'City of Dreams', 'location': 'Mohali', 'img': '16.webp'},
+                    {'year': '2022', 'title': 'Housing Park Phase 2', 'location': 'Derabassi', 'img': '17.webp'},
+                    {'year': '2022', 'title': 'Shopping Square', 'location': 'Sector 126, Mohali', 'img': '18.webp'},
+                    {'year': '2024', 'title': 'City Square', 'location': 'Panchkula', 'img': '19.webp'},
+                    {'year': '2024', 'title': 'Olivia Floors', 'location': 'Chandigarh', 'img': '20.webp'},
+                ] %}
+                <div class="owl-carousel owl-theme" id="milestone">
+                    {% for milestone in milestones %}
+                        <div class="item">
+                            <div class="text-center">
+                                <img src="{{ asset('photos/milestones/' ~ milestone.img) }}" class="d-block mx-auto" alt="{{ milestone.title }}" style="max-height: 400px; width: 100%">
+                                <div class="text mt-3">
+                                    <div class="year">{{ milestone.year }}</div>
+                                    <h2>{{ milestone.title }}</h2>
+                                    <p>{{ milestone.location }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="chairman_message my-5">
+                    <h3 class="fa-bold text-center my-5">Founder &amp; CMD Message</h3>
+                    <div class="row text-center align-items-center">
+                        <div class="col-md-6">
+                            <div class="text">
+
+                                <p>
+                                    At TruHaven, what began as a modest vision has grown into a passionate pursuit of transforming urban living. From the very first brick laid, our philosophy has remained rooted in a customer-first approach. Every milestone we've achieved is a testament to our commitment to quality, trust, and transparency.
+                                </p>
+                                <p>
+                                    We understand that a home is not just a structure—it’s a dream, an emotion, a legacy. That’s why our efforts are centered around delivering modern, sustainable, and affordable spaces for families who deserve nothing but the best. Our promise doesn’t end at construction; it extends to after-sales care, community development, and long-term value.
+                                </p>
+                                <p>
+                                    As we continue to expand our presence across North India, especially in Tricity, Shimla, and Manali, we remain focused on creating homes that elevate lifestyles and nurture vibrant communities. I firmly believe that every honest effort brings its reward—and for us, that reward is the satisfaction and trust of our clients.
+                                </p>
+                                <div class="sig mt-3">
+                                    <img src="{{ asset('photos/signature.jpg') }}" alt="signature">
+                                    <p class="mt-2 mb-0 fw-bold">Sahil Singla</p>
+                                    <small>Founder & CMD, TruHaven</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="owner">
+                                <img src="{{ asset('photos/Personal.jpg') }}" class="rounded-circle img-fluid" alt="Sahil Singla">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="awards text-center mb-5">
+                    <h3 class="fw-bold">Accolades</h3>
+                    <p class="text-muted">Recognizing our commitment to excellence in real estate development</p>
+                </div>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    {% set awards = [
+                        {'img': '1.webp', 'title': 'Punjab Di Shaan Award', 'desc': 'Housing Expert Company'},
+                        {'img': '2.webp', 'title': 'Dainik Bhaskar Impact Awards', 'desc': 'No. 1 Housing Company of the TriCity'},
+                        {'img': '3.webp', 'title': 'Award of Excellence', 'desc': 'Record Unit Deliveries in Decade'},
+                        {'img': '4.webp', 'title': 'Award of Excellence by Punjab Government', 'desc': 'Reputed Residential Developer in Punjab'},
+                        {'img': '5.webp', 'title': 'Gems of Punjab', 'desc': 'TruHaven, No.1 Housing Company in Punjab'},
+                        {'img': '6.webp', 'title': 'Tricity Emerging Developer', 'desc': 'Pioneer in Emerging Tricity Real Estate'},
+                        {'img': '7.webp', 'title': 'Trusted Brand of Himachal Pradesh', 'desc': 'Guest of Honour Recognition'},
+                        {'img': '8.webp', 'title': 'Pioneers of Himachal', 'desc': 'Excellence in Tourism and Housing Project'},
+                        {'img': '9.webp', 'title': 'Punjab Di Shaan Award', 'desc': 'Excellence in Tourism'},
+                        {'img': '10.webp', 'title': 'Pioneers of North', 'desc': 'Excellence in Housing Project'},
+                        {'img': '11.webp', 'title': 'Haryana Di Shaan Award', 'desc': 'Excellence in Customer Satisfaction'},
+                    ] %}
+
+                    <div class="owl-carousel owl-theme" id="awards">
+                        {% for award in awards %}
+                            <div class="item">
+                                <div class="card border-0 shadow-sm h-100 text-center p-3">
+                                    <img src="{{ asset('photos/awards/' ~ award.img) }}" class="mx-auto" alt="{{ award.title }}" style="width: 40px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-semibold">{{ award.title }}</h5>
+                                        <p class="card-text text-muted small">{{ award.desc }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="about_us_section py-5">
+            <div class="container">
+                <div class="col-md-12">
+                    <div>
+                        <h3 class="fw-bold text-center">TruHaven: Building Dreams, Creating Futures</h3>
+                        <div class="content mb-4">
+                            At TruHaven, we believe that a home is more than just walls—it’s the foundation of your future. Born from a vision to make luxury living accessible and meaningful, TruHaven has consistently delivered not just structures, but lifestyles. Rooted in trust, transparency, and quality, we are redefining what it means to “live well.”
+                        </div>
+
+                        <div class="more_content">
+                            <p>
+                                The journey of transformation begins with belief—and at TruHaven, we believe in the power of change. Just as nature evolves, we evolve the meaning of home for the modern Indian family. Each of our developments is a step toward innovation—designed to enrich lives with functionality, aesthetics, and community living. We bring change through our commitment to excellence, creating premium yet affordable housing solutions for all.
+                            </p>
+
+                            <h4 class="fw-semibold">10+ Years of Trust, Innovation & Growth</h4>
+                            <p>
+                                For over a decade, TruHaven has been more than just a builder—we have been partners in people’s life journeys. Our legacy is built on timely delivery, ethical practices, and customer-first policies. From residential havens to commercial landmarks, every project bears our signature of quality and attention to detail. Through transparent processes and consistent innovation, we continue to raise the bar in North India’s real estate space.
+                            </p>
+
+                            <h4 class="fw-semibold">8,500+ Happy Families and Counting</h4>
+                            <p>
+                                Behind every key we hand over is a dream fulfilled. With over 8,500 homes delivered across the Tricity, Shimla, and Manali regions, we are proud to be a part of thousands of life stories. Our ambition is bold—delivering 1 lakh homes in the next 10 years—and our roadmap is clear: leverage technology, optimize design, and prioritize customer experience. Every home we build is crafted for comfort, sustainability, and lasting value.
+                            </p>
+
+                            <h4 class="fw-semibold">A Future-Ready Vision</h4>
+                            <p>
+                                We envision smart communities, green living spaces, and environments where people thrive. With upcoming projects across Northern India, TruHaven is committed to building more than properties—we’re building the future. Our values will always remain strong: innovation, integrity, inclusivity, and impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{{ include('pages/footer.html.twig') }}
+{% endblock %}
+
+
+

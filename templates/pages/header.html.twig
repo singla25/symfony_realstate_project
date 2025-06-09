@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg bg-dark ">
+        <div class="container-fluid">
+            <div class="logo">
+                <a class="navbar-brand" href="{{ path('home_page') }}">
+                    <img src="{{ asset('photos/logo.png') }}" alt="logo" height="60px" width="100px">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="{{ path('about_page') }}">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Property Type
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ path('residential_page') }}">Residential</a></li>
+                            <li><a class="dropdown-item" href="{{ path('commercial_page') }}">Commercial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="{{ path('product_listing_page') }}">Product Listing</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
