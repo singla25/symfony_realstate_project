@@ -100,40 +100,37 @@ About Us
 
         <section class="py-5 bg-light">
             <div class="container">
-                <div class="awards text-center mb-5">
+                <div class="text-center mb-5">
                     <h3 class="fw-bold">Accolades</h3>
                     <p class="text-muted">Recognizing our commitment to excellence in real estate development</p>
                 </div>
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-                    {% set awards = [
-                        {'img': '1.webp', 'title': 'Punjab Di Shaan Award', 'desc': 'Housing Expert Company'},
-                        {'img': '2.webp', 'title': 'Dainik Bhaskar Impact Awards', 'desc': 'No. 1 Housing Company of the TriCity'},
-                        {'img': '3.webp', 'title': 'Award of Excellence', 'desc': 'Record Unit Deliveries in Decade'},
-                        {'img': '4.webp', 'title': 'Award of Excellence by Punjab Government', 'desc': 'Reputed Residential Developer in Punjab'},
-                        {'img': '5.webp', 'title': 'Gems of Punjab', 'desc': 'TruHaven, No.1 Housing Company in Punjab'},
-                        {'img': '6.webp', 'title': 'Tricity Emerging Developer', 'desc': 'Pioneer in Emerging Tricity Real Estate'},
-                        {'img': '7.webp', 'title': 'Trusted Brand of Himachal Pradesh', 'desc': 'Guest of Honour Recognition'},
-                        {'img': '8.webp', 'title': 'Pioneers of Himachal', 'desc': 'Excellence in Tourism and Housing Project'},
-                        {'img': '9.webp', 'title': 'Punjab Di Shaan Award', 'desc': 'Excellence in Tourism'},
-                        {'img': '10.webp', 'title': 'Pioneers of North', 'desc': 'Excellence in Housing Project'},
-                        {'img': '11.webp', 'title': 'Haryana Di Shaan Award', 'desc': 'Excellence in Customer Satisfaction'},
-                    ] %}
+                {% set awards = [
+                    {'img': '1.webp', 'title': 'Punjab Di Shaan Award', 'desc': 'Housing Expert Company'},
+                    {'img': '2.webp', 'title': 'Dainik Bhaskar Impact Awards', 'desc': 'No. 1 Housing Company of the TriCity'},
+                    {'img': '3.webp', 'title': 'Award of Excellence', 'desc': 'Record Unit Deliveries in Decade'},
+                    {'img': '4.webp', 'title': 'Punjab State Excellence Award', 'desc': 'Reputed Residential Developer in Punjab'},
+                    {'img': '5.webp', 'title': 'Gems of Punjab', 'desc': 'TruHaven, No.1 Housing Company in Punjab'},
+                    {'img': '6.webp', 'title': 'Tricity Emerging Developer', 'desc': 'Pioneer in Emerging Tricity Real Estate'},
+                    {'img': '7.webp', 'title': 'Trusted Brand of Himachal Pradesh', 'desc': 'Guest of Honour Recognition'},
+                    {'img': '8.webp', 'title': 'Pioneers of Himachal', 'desc': 'Excellence in Tourism and Housing Project'},
+                    {'img': '9.webp', 'title': 'Punjab Di Shaan Award', 'desc': 'Excellence in Tourism'},
+                    {'img': '10.webp', 'title': 'Pioneers of North', 'desc': 'Excellence in Housing Project'},
+                    {'img': '11.webp', 'title': 'Haryana Di Shaan Award', 'desc': 'Excellence in Customer Satisfaction'}
+                ] %}
 
-                    <div class="owl-carousel owl-theme" id="awards">
-                        {% for award in awards %}
-                            <div class="item">
-                                <div class="card border-0 shadow-sm h-100 text-center p-3">
-                                    <img src="{{ asset('photos/awards/' ~ award.img) }}" class="mx-auto" alt="{{ award.title }}" style="width: 40px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-semibold">{{ award.title }}</h5>
-                                        <p class="card-text text-muted small">{{ award.desc }}</p>
-                                    </div>
+                <div class="owl-carousel owl-theme" id="awards">
+                    {% for award in awards %}
+                        <div class="item">
+                            <div class="card border-0 shadow-sm h-100 text-center p-3">
+                                <img src="{{ asset('photos/awards/' ~ award.img) }}" class="mx-auto d-block mb-3" alt="{{ award.title }}" style="width: 40px;">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-semibold">{{ award.title }}</h5>
+                                    <p class="card-text text-muted small">{{ award.desc }}</p>
                                 </div>
                             </div>
-                        {% endfor %}
-                    </div>
-
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
