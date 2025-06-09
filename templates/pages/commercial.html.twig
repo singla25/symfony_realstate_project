@@ -42,269 +42,74 @@ Commercial Properties
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
-                                    <div class="owl-carousel" id="regi_proj_list">
-                                        <div class="owl-stage-outer">
-                                            <div class="owl-stage">
-                                                {% set allProjects = [
-                                                    { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
-                                                    { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
-                                                    { name: 'TruHaven City Gate', location: 'Shimla', img: '22.webp'},
-                                                ] %}
+                                    {% set allProjects = [
+                                        { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
+                                        { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
+                                        { name: 'TruHaven City Gate', location: 'Shimla', img: '22.webp'},
+                                    ] %}
 
-                                                <div class="owl-item" style="width: 531px; margin-right: 15px;">
-                                                    <div class="item">
-                                                        <div class="showcaseImg">
-                                                            {% for allProject in allProjects %}
-                                                                <img src="{{ asset('photos/residentialProperty/' ~allProject.img) }}" alt="{{ allProject.name }}" style="height: 200px; width: 600px">
-                                                                <div class="showcase_content_slide">
-                                                                    <h4><a href="#">{{ allProject.name }}</a></h4>
-                                                                    <div class="showLocation">
-                                                                        <p>{{ allProject.location }}</p>
-                                                                    </div>
-                                                                </div>
-                                                            {% endfor %}
+                                    <div class="owl-carousel comm_proj_list">
+                                        {% for allProject in allProjects %}
+                                            <div class="item">
+                                                <div class="card h-100 border-0 shadow-sm">
+                                                    <img src="{{ asset('photos/residentialProperty/' ~allProject.img) }}" alt="{{ allProject.name }}" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                                                    <div class="card-body text-center">
+                                                        <h4><a href="#" class="text-decoration-none text-dark">{{ allProject.name }}</a></h4>
+                                                        <div class="showLocation">
+                                                            <p class="card-text text-muted mb-0">{{ allProject.location }}</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
 
                                 <div class="tab-pane fade" id="readyToMove-tab-pane" role="tabpanel" aria-labelledby="readyToMove-tab" tabindex="0">
-                                    <div class="owl-carousel" id="regi_proj_list2">
-                                        <div class="owl-stage-outer">
-                                            <div class="owl-stage">
-                                                {% set readyToMoveProjects = [
-                                                    { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
-                                                    { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
-                                                ] %}
-
-                                                <div class="owl-item" style="width: 531px; margin-right: 15px;">
-                                                    <div class="item">
-                                                        <div class="showcaseImg01">
-                                                            {% for readyToMoveProject in readyToMoveProjects %}
-                                                                <img src="{{ asset('photos/residentialProperty/' ~readyToMoveProject.img) }}" alt="{{ readyToMoveProject.name }}" style="height: 200px; width: 600px">
-                                                                <div class="showcase_content_slide">
-                                                                    <h4><a href="#">{{ readyToMoveProject.name }}</a></h4>
-                                                                    <div class="showLocation">
-                                                                        <p>{{ readyToMoveProject.location }}</p>
-                                                                    </div>
-                                                                </div>
-                                                            {% endfor %}
-                                                        </div>
+                                    {% set readyToMoveProjects = [
+                                        { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
+                                        { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
+                                    ] %}
+                                    <div class="owl-carousel comm_proj_list">
+                                        {% for readyToMoveProject in readyToMoveProjects %}
+                                            <div class="item">
+                                                <div class="card h-100 border-0 shadow-sm"></div>
+                                                <img src="{{ asset('photos/residentialProperty/' ~readyToMoveProject.img) }}" alt="{{ readyToMoveProject.name }}" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                                                <div class="card-body text-center">
+                                                    <h4><a href="#" class="text-decoration-none text-dark">{{ readyToMoveProject.name }}</a></h4>
+                                                    <div class="showLocation">
+                                                        <p class="card-text text-muted mb-0">{{ readyToMoveProject.location }}</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
 
                                 <div class="tab-pane fade" id="underConstruction-tab-pane" role="tabpanel" aria-labelledby="underConstruction-tab" tabindex="0">
                                     <div class="tab-pane fade show" id="Construction" role="tabpanel" aria-labelledby="Construction-tab">
-                                        <div class="owl-carousel" id="regi_proj_list1">
-                                            <div class="owl-stage-outer">
-                                                <div class="owl-stage">
-                                                    {% set underConstructionProjects = [
-                                                        { name: 'TruHaven City Gate', location: 'Shimla', img: '22.webp'},
-                                                    ] %}
-
-                                                    <div class="owl-item" style="width: 531px; margin-right: 15px;">
-                                                        <div class="item">
-                                                            <div class="showcaseImg01">
-                                                                {% for underConstructionProject in underConstructionProjects %}
-                                                                    <img src="{{ asset('photos/residentialProperty/' ~underConstructionProject.img) }}" alt="{{ underConstructionProject.name }}" style="height: 200px; width: 600px">
-                                                                    <div class="showcase_content_slide">
-                                                                        <h4><a href="#">{{ underConstructionProject.name }}</a></h4>
-                                                                        <div class="showLocation">
-                                                                            <p>{{ underConstructionProject.location }}</p>
-                                                                        </div>
-                                                                    </div>
-                                                                {% endfor %}
-                                                            </div>
+                                        {% set underConstructionProjects = [
+                                            { name: 'TruHaven City Gate', location: 'Shimla', img: '22.webp'},
+                                        ] %}
+                                        <div class="owl-carousel comm_proj_list">
+                                            {% for underConstructionProject in underConstructionProjects %}
+                                                <div class="item">
+                                                    <div class="card h-100 border-0 shadow-sm"></div>
+                                                    <img src="{{ asset('photos/residentialProperty/' ~underConstructionProject.img) }}" alt="{{ underConstructionProject.name }}" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+                                                    <div class="card-body text-center">
+                                                        <h4><a href="#" class="text-decoration-none text-dark">{{ underConstructionProject.name }}</a></h4>
+                                                        <div class="showLocation">
+                                                            <p class="card-text text-muted mb-0">{{ underConstructionProject.location }}</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="comm_tabs my-4">
-                            <h3 class="text-center my-5">Delivered Projects</h3>
-
-                            <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="2024-tab" data-bs-toggle="tab" data-bs-target="#2024-tab-pane" type="button" role="tab" aria-controls="2024-tab-pane" aria-selected="true">2024</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2022-tab" data-bs-toggle="tab" data-bs-target="#2022-tab-pane" type="button" role="tab" aria-controls="2022-tab-pane" aria-selected="false">2022</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#2020-tab-pane" type="button" role="tab" aria-controls="2020-tab-pane" aria-selected="false">2020</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2018-tab" data-bs-toggle="tab" data-bs-target="#2018-tab-pane" type="button" role="tab" aria-controls="2018-tab-pane" aria-selected="false">2018</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2016-tab" data-bs-toggle="tab" data-bs-target="#2016-tab-pane" type="button" role="tab" aria-controls="2016-tab-pane" aria-selected="false">2016</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2014-tab" data-bs-toggle="tab" data-bs-target="#2014-tab-pane" type="button" role="tab" aria-controls="2014-tab-pane" aria-selected="false">2014</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2011-tab" data-bs-toggle="tab" data-bs-target="#2011-tab-pane" type="button" role="tab" aria-controls="2011-tab-pane" aria-selected="false">2011</button>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="2024-tab-pane" role="tabpanel" aria-labelledby="2024-tab" tabindex="0">
-                                    {% set projects = [
-                                        { name: 'TruHaven Towers', location: 'Shimla', img: '1.jpg'},
-                                        { name: 'TruHaven Elite Homes', location: 'New Chandigarh', img: '7.webp'},
-                                        { name: 'TruHaven Shopping Square', location: 'Patiala Highway, Zirakpur', img: '10.webp'},
-                                    ] %}
-                                    <div class="owl-carousel delivered_project">
-                                        {% for project in projects %}
-                                            <div class="item">
-                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
-                                                <div class="showcase_content_slide">
-                                                    <h4><a href="#">{{ project.name }}</a></h4>
-                                                    <div class="showLocation">
-                                                        <p>{{ project.location }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="2022-tab-pane" role="tabpanel" aria-labelledby="2022-tab" tabindex="0">
-                                    {% set projects = [
-                                        { name: 'Gateway of Dreams', location: 'Patiala Highway, Zirakpur', img: '8.webp'},
-                                        { name: 'Olivia Floors', location: 'Sector 116, Mohali', img: '9.webp'},
-                                    ] %}
-
-                                    <div class="owl-carousel delivered_project">
-                                        {% for project in projects %}
-                                            <div class="item">
-                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
-                                                <div class="showcase_content_slide">
-                                                    <h4><a href="#">{{ project.name }}</a></h4>
-                                                    <div class="showLocation">
-                                                        <p>{{ project.location }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-
-                                </div>
-
-                                <div class="tab-pane fade" id="2020-tab-pane" role="tabpanel" aria-labelledby="2020-tab" tabindex="0">
-                                    {% set projects = [
-                                        { name: 'City Square', location: 'Sector 127, Mohali', img: '11.webp'},
-                                        { name: 'Housing Park Phase 2', location: 'Derabassi', img: '12.webp'},
-                                        { name: 'Lifestyle Sky Homes', location: 'Sector 116, Mohali', img: '13.webp'},
-                                    ] %}
-                                    <div class="owl-carousel delivered_project">
-                                        {% for project in projects %}
-                                            <div class="item">
-                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
-                                                <div class="showcase_content_slide">
-                                                    <h4><a href="#">{{ project.name }}</a></h4>
-                                                    <div class="showLocation">
-                                                        <p>{{ project.location }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="2018-tab-pane" role="tabpanel" aria-labelledby="2018-tab" tabindex="0">
-                                    {% set projects = [
-                                        { name: 'Lifestyle Residency', location: 'Sector 116, Mohali', img: '14.webp'},
-                                        { name: 'Platina Floors', location: 'Sector 127, Mohali', img: '15.webp'},
-                                    ] %}
-                                    <div class="owl-carousel delivered_project">
-                                        {% for project in projects %}
-                                            <div class="item">
-                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
-                                                <div class="showcase_content_slide">
-                                                    <h4><a href="#">{{ project.name }}</a></h4>
-                                                    <div class="showLocation">
-                                                        <p>{{ project.location }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="2016-tab-pane" role="tabpanel" aria-labelledby="2016-tab" tabindex="0">
-                                    {% set projects = [
-                                        { name: 'Housing Park Phase 1', location: 'Derabassi', img: '16.webp'},
-                                        { name: 'Exotic Floors', location: 'Sector 127, Mohali', img: '17.webp'},
-                                        { name: 'Elitna Floors', location: 'Sector 127, Mohali', img: '18.webp'},
-                                    ] %}
-                                    <div class="owl-carousel delivered_project">
-                                        {% for project in projects %}
-                                            <div class="item">
-                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
-                                                <div class="showcase_content_slide">
-                                                    <h4><a href="#">{{ project.name }}</a></h4>
-                                                    <div class="showLocation">
-                                                        <p>{{ project.location }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="2014-tab-pane" role="tabpanel" aria-labelledby="2014-tab" tabindex="0">
-                                    {% set projects = [
-                                        { name: 'Home Extension 3', location: 'Sector 127, Mohali', img: '19.webp'},
-                                    ] %}
-
-                                    <div class="owl-carousel delivered_project">
-                                        {% for project in projects %}
-                                            <div class="item">
-                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
-                                                <div class="showcase_content_slide">
-                                                    <h4><a href="#">{{ project.name }}</a></h4>
-                                                    <div class="showLocation">
-                                                        <p>{{ project.location }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="2011-tab-pane" role="tabpanel" aria-labelledby="2011-tab" tabindex="0">
-                                    {% set projects = [
-                                        { name: 'North Vally', location: 'Kharar, Mohali', img: '20.webp'},
-                                        { name: 'TruHaven Parivaar', location: 'Mohali', img: '21.png'},
-                                    ] %}
-                                    <div class="owl-carousel delivered_project">
-                                        {% for project in projects %}
-                                            <div class="item">
-                                                <img src="{{ asset('photos/residentialProperty/' ~project.img) }}" alt="{{ project.name }}" style="height: 200px; width: 600px">
-                                                <div class="showcase_content_slide">
-                                                    <h4><a href="#">{{ project.name }}</a></h4>
-                                                    <div class="showLocation">
-                                                        <p>{{ project.location }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{ include('pages/deliveredProjects.html.twig') }}
                     </div>
                 </div>
             </div>
