@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "156e36643d9c99f1aef074057f6d09a1",
+    "content-hash": "f4e6b5c4fd969b8c4adc0d3285ee00ab",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -5750,16 +5750,16 @@
         },
         {
             "name": "symfony/security-bundle",
-            "version": "v7.2.7",
+            "version": "v7.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-bundle.git",
-                "reference": "5431c40e72186d10f6951461048515966e55aa67"
+                "reference": "4a92c570e26ec6b01eb719313673d7ad7d6067a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/5431c40e72186d10f6951461048515966e55aa67",
-                "reference": "5431c40e72186d10f6951461048515966e55aa67",
+                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/4a92c570e26ec6b01eb719313673d7ad7d6067a4",
+                "reference": "4a92c570e26ec6b01eb719313673d7ad7d6067a4",
                 "shasum": ""
             },
             "require": {
@@ -5836,7 +5836,7 @@
             "description": "Provides a tight integration of the Security component into the Symfony full-stack framework",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/security-bundle/tree/v7.2.7"
+                "source": "https://github.com/symfony/security-bundle/tree/v7.2.8"
             },
             "funding": [
                 {
@@ -5852,7 +5852,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-15T09:03:48+00:00"
+            "time": "2025-06-24T04:04:14+00:00"
         },
         {
             "name": "symfony/security-core",
@@ -6942,16 +6942,16 @@
         },
         {
             "name": "symfony/uid",
-            "version": "v7.2.0",
+            "version": "v7.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/uid.git",
-                "reference": "2d294d0c48df244c71c105a169d0190bfb080426"
+                "reference": "41aced5ddb593c9c6c81ac9828320448caa02444"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/uid/zipball/2d294d0c48df244c71c105a169d0190bfb080426",
-                "reference": "2d294d0c48df244c71c105a169d0190bfb080426",
+                "url": "https://api.github.com/repos/symfony/uid/zipball/41aced5ddb593c9c6c81ac9828320448caa02444",
+                "reference": "41aced5ddb593c9c6c81ac9828320448caa02444",
                 "shasum": ""
             },
             "require": {
@@ -6996,7 +6996,7 @@
                 "uuid"
             ],
             "support": {
-                "source": "https://github.com/symfony/uid/tree/v7.2.0"
+                "source": "https://github.com/symfony/uid/tree/v7.2.8"
             },
             "funding": [
                 {
@@ -7012,7 +7012,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:21:43+00:00"
+            "time": "2025-06-27T19:53:16+00:00"
         },
         {
             "name": "symfony/ux-twig-component",
@@ -7579,6 +7579,52 @@
                 }
             ],
             "time": "2025-04-04T10:10:11+00:00"
+        },
+        {
+            "name": "symfonycasts/verify-email-bundle",
+            "version": "v1.17.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SymfonyCasts/verify-email-bundle.git",
+                "reference": "2cb1cd94ca7a65471563a5cb91ddf40e8433844e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/2cb1cd94ca7a65471563a5cb91ddf40e8433844e",
+                "reference": "2cb1cd94ca7a65471563a5cb91ddf40e8433844e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=8.1",
+                "symfony/config": "^5.4 | ^6.0 | ^7.0",
+                "symfony/dependency-injection": "^5.4 | ^6.0 | ^7.0",
+                "symfony/deprecation-contracts": "^2.2 | ^3.0",
+                "symfony/http-kernel": "^5.4 | ^6.0 | ^7.0",
+                "symfony/routing": "^5.4 | ^6.0 | ^7.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.7",
+                "doctrine/persistence": "^2.0",
+                "symfony/framework-bundle": "^5.4 | ^6.0 | ^7.0",
+                "symfony/phpunit-bridge": "^5.4 | ^6.0 | ^7.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "SymfonyCasts\\Bundle\\VerifyEmail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple, stylish Email Verification for Symfony",
+            "support": {
+                "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
+                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.17.3"
+            },
+            "time": "2024-12-09T18:44:25+00:00"
         },
         {
             "name": "twig/extra-bundle",

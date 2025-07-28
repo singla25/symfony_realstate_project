@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class MainController extends AbstractController
 {
-    #[Route('/', name: 'home_page')]
+    #[Route('/home', name: 'home_page')]
     public function home(Request $request, ContactRepository $contactRepository, EntityManagerInterface $em): Response
     {
         $homePageForm = new Contact();
